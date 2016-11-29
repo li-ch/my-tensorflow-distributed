@@ -1,0 +1,77 @@
+--- transformer-single/cluttered_mnist.py	2016-11-25 16:49:44.000000000 +0800
++++ transformer/cluttered_mnist.py	2016-11-25 16:49:44.000000000 +0800
+@@ -17,10 +17,32 @@
+ import numpy as np
+ from tf_utils import weight_variable, bias_variable, dense_to_one_hot
+ 
++parameter_servers = ["192.168.122.100:2223"]
++workers = ["192.168.122.100:2222",
++           "192.168.122.101:2222"]
++cluster = tf.train.ClusterSpec({"ps": parameter_servers, "worker": workers})
++
++# input flags
++tf.app.flags.DEFINE_string("job_name", "", "Either 'ps' or 'worker'")
++tf.app.flags.DEFINE_integer("task_index", 0, "Index of task within the job")
++FLAGS = tf.app.flags.FLAGS
++
++# start a server for a specific task
++server = tf.train.Server(
++    cluster, job_name=FLAGS.job_name, task_index=FLAGS.task_index)
++
+ # %% Load data
+ # mnist_cluttered = np.load('./data/mnist_sequence1_sample_5distortions5x5.npz')
+ mnist_cluttered = np.load('./data/mnist.npz')
+ 
++if FLAGS.job_name == "ps":
++    server.join()
++elif FLAGS.job_name == "worker":
++
++    with tf.device(tf.train.replica_device_setter(
++            worker_device="/job:worker/task:%d" % FLAGS.task_index,
++            cluster=cluster)):
++
+ X_train = mnist_cluttered['X_train']
+ y_train = mnist_cluttered['y_train']
+ X_valid = mnist_cluttered['X_valid']
+@@ -66,7 +88,8 @@
+ keep_prob = tf.placeholder(tf.float32)
+ h_fc_loc1_drop = tf.nn.dropout(h_fc_loc1, keep_prob)
+ # %% Second layer
+-h_fc_loc2 = tf.nn.tanh(tf.matmul(h_fc_loc1_drop, W_fc_loc2) + b_fc_loc2)
++        h_fc_loc2 = tf.nn.tanh(
++            tf.matmul(h_fc_loc1_drop, W_fc_loc2) + b_fc_loc2)
+ 
+ # %% We'll create a spatial transformer module to identify discriminative
+ # %% patches
+@@ -97,7 +120,8 @@
+ # %% And just like the first layer, add additional layers to create
+ # a deep net
+ n_filters_2 = 16
+-W_conv2 = weight_variable([filter_size, filter_size, n_filters_1, n_filters_2])
++        W_conv2 = weight_variable(
++            [filter_size, filter_size, n_filters_1, n_filters_2])
+ b_conv2 = bias_variable([n_filters_2])
+ h_conv2 = tf.nn.relu(
+     tf.nn.conv2d(input=h_conv1,
+@@ -135,13 +159,16 @@
+ 
+ # %% We now create a new session to actually perform the initialization the
+ # variables:
+-sess = tf.Session()
+-sess.run(tf.initialize_all_variables())
+-
+-
++        # sess = tf.Session()
++        # sess.run(tf.initialize_all_variables())
++        init_op = tf.initialize_all_variables()
++
++    sv = tf.train.Supervisor(is_chief=(FLAGS.task_index == 0),
++                             init_op=init_op)
++    with sv.prepare_or_wait_for_session(server.target) as sess:
+ # %% We'll now train in minibatches and report accuracy, loss:
+ iter_per_epoch = 100
+-n_epochs = 500
++        n_epochs = 5
+ train_size = 10000
+ 
+ indices = np.linspace(0, 10000 - 1, iter_per_epoch)
