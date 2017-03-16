@@ -1,0 +1,182 @@
+I tensorflow/stream_executor/dso_loader.cc:135] successfully opened CUDA library libcublas.so.8.0 locally
+I tensorflow/stream_executor/dso_loader.cc:135] successfully opened CUDA library libcudnn.so.5 locally
+I tensorflow/stream_executor/dso_loader.cc:135] successfully opened CUDA library libcufft.so.8.0 locally
+I tensorflow/stream_executor/dso_loader.cc:135] successfully opened CUDA library libcuda.so.1 locally
+I tensorflow/stream_executor/dso_loader.cc:135] successfully opened CUDA library libcurand.so.8.0 locally
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:885] Found device 0 with properties: 
+name: Tesla K40m
+major: 3 minor: 5 memoryClockRate (GHz) 0.745
+pciBusID 0000:82:00.0
+Total memory: 11.17GiB
+Free memory: 11.10GiB
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:906] DMA: 0 
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:916] 0:   Y 
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla K40m, pci bus id: 0000:82:00.0)
+I tensorflow/core/distributed_runtime/rpc/grpc_channel.cc:200] Initialize GrpcChannelCache for job ps -> {0 -> 10.40.199.203:12224}
+I tensorflow/core/distributed_runtime/rpc/grpc_channel.cc:200] Initialize GrpcChannelCache for job worker -> {0 -> 10.40.199.202:12200, 1 -> 10.40.199.202:12201, 2 -> localhost:12202, 3 -> 10.40.199.202:12203}
+I tensorflow/core/distributed_runtime/rpc/grpc_server_lib.cc:241] Started server with target: grpc://localhost:12202
+I tensorflow/core/distributed_runtime/rdma/rdma_mgr.cc:39] 4
+I tensorflow/core/distributed_runtime/rdma/rdma_mgr.cc:42] checkpoint 1
+I tensorflow/core/distributed_runtime/rdma/rdma_mgr.cc:44] logs for checkpoint 2
+I tensorflow/core/distributed_runtime/rdma/rdma_mgr.cc:53] Before setting channels 
+I tensorflow/core/distributed_runtime/rdma/rdma_mgr.cc:62] channel info set finished
+I tensorflow/core/distributed_runtime/rdma/rdma_mgr.cc:65] Current i value in rdma_mgr.cc is: 0
+I tensorflow/core/distributed_runtime/rdma/rdma_mgr.cc:65] Current i value in rdma_mgr.cc is: 1
+I tensorflow/core/distributed_runtime/rdma/rdma_mgr.cc:65] Current i value in rdma_mgr.cc is: 2
+I tensorflow/core/distributed_runtime/rdma/rdma_mgr.cc:65] Current i value in rdma_mgr.cc is: 3
+I ./tensorflow/core/distributed_runtime/worker_interface.h:148] worker interface got the getRemoteAddress command 
+I ./tensorflow/core/distributed_runtime/worker_interface.h:173] Beginning of CallandWait...
+I ./tensorflow/core/distributed_runtime/worker_interface.h:176] Initialized two variables...
+I ./tensorflow/core/distributed_runtime/worker_interface.h:148] worker interface got the getRemoteAddress command 
+I ./tensorflow/core/distributed_runtime/worker_interface.h:173] Beginning of CallandWait...
+I ./tensorflow/core/distributed_runtime/worker_interface.h:176] Initialized two variables...
+I ./tensorflow/core/distributed_runtime/worker_interface.h:178] Beginning of ???...
+I ./tensorflow/core/distributed_runtime/worker_interface.h:180] Call and wait started to run...
+I ./tensorflow/core/distributed_runtime/worker_interface.h:182] Call and wait procedure finished...waiting for notification
+I ./tensorflow/core/distributed_runtime/worker_interface.h:185] Got notification..
+I ./tensorflow/core/distributed_runtime/worker_interface.h:150] Finished call and wait
+I ./tensorflow/core/distributed_runtime/worker_interface.h:178] Beginning of ???...
+I ./tensorflow/core/distributed_runtime/worker_interface.h:180] Call and wait started to run...
+I ./tensorflow/core/distributed_runtime/worker_interface.h:182] Call and wait procedure finished...waiting for notification
+I ./tensorflow/core/distributed_runtime/worker_interface.h:185] Got notification..
+I ./tensorflow/core/distributed_runtime/worker_interface.h:150] Finished call and wait
+I tensorflow/core/distributed_runtime/rdma/rdma_mgr.cc:75] status initialized
+I tensorflow/core/distributed_runtime/rdma/rdma_mgr.cc:77] s.ok()
+I tensorflow/core/distributed_runtime/rdma/rdma.cc:515] channel already connected
+I tensorflow/core/distributed_runtime/rdma/rdma_mgr.cc:39] 4
+I tensorflow/core/distributed_runtime/rdma/rdma_mgr.cc:42] checkpoint 1
+I tensorflow/core/distributed_runtime/rdma/rdma_mgr.cc:44] logs for checkpoint 2
+I tensorflow/core/distributed_runtime/rdma/rdma_mgr.cc:53] Before setting channels 
+I tensorflow/core/distributed_runtime/rdma/rdma_mgr.cc:62] channel info set finished
+I tensorflow/core/distributed_runtime/rdma/rdma_mgr.cc:65] Current i value in rdma_mgr.cc is: 0
+I tensorflow/core/distributed_runtime/rdma/rdma_mgr.cc:65] Current i value in rdma_mgr.cc is: 1
+I tensorflow/core/distributed_runtime/rdma/rdma_mgr.cc:65] Current i value in rdma_mgr.cc is: 2
+I tensorflow/core/distributed_runtime/rdma/rdma_mgr.cc:65] Current i value in rdma_mgr.cc is: 3
+I ./tensorflow/core/distributed_runtime/worker_interface.h:148] worker interface got the getRemoteAddress command 
+I ./tensorflow/core/distributed_runtime/worker_interface.h:173] Beginning of CallandWait...
+I ./tensorflow/core/distributed_runtime/worker_interface.h:176] Initialized two variables...
+I ./tensorflow/core/distributed_runtime/worker_interface.h:178] Beginning of ???...
+I ./tensorflow/core/distributed_runtime/worker_interface.h:180] Call and wait started to run...
+I ./tensorflow/core/distributed_runtime/worker_interface.h:182] Call and wait procedure finished...waiting for notification
+I ./tensorflow/core/distributed_runtime/worker_interface.h:185] Got notification..
+I ./tensorflow/core/distributed_runtime/worker_interface.h:150] Finished call and wait
+I tensorflow/core/distributed_runtime/rdma/rdma_mgr.cc:75] status initialized
+I tensorflow/core/distributed_runtime/rdma/rdma_mgr.cc:77] s.ok()
+I tensorflow/core/distributed_runtime/rdma/rdma_mgr.cc:39] 4
+I tensorflow/core/distributed_runtime/rdma/rdma_mgr.cc:42] checkpoint 1
+I tensorflow/core/distributed_runtime/rdma/rdma_mgr.cc:44] logs for checkpoint 2
+I tensorflow/core/distributed_runtime/rdma/rdma_mgr.cc:53] Before setting channels 
+I tensorflow/core/distributed_runtime/rdma/rdma_mgr.cc:62] channel info set finished
+I tensorflow/core/distributed_runtime/rdma/rdma_mgr.cc:65] Current i value in rdma_mgr.cc is: 0
+I tensorflow/core/distributed_runtime/rdma/rdma_mgr.cc:65] Current i value in rdma_mgr.cc is: 1
+I tensorflow/core/distributed_runtime/rdma/rdma_mgr.cc:65] Current i value in rdma_mgr.cc is: 2
+I tensorflow/core/distributed_runtime/rdma/rdma_mgr.cc:65] Current i value in rdma_mgr.cc is: 3
+I ./tensorflow/core/distributed_runtime/worker_interface.h:148] worker interface got the getRemoteAddress command 
+I ./tensorflow/core/distributed_runtime/worker_interface.h:173] Beginning of CallandWait...
+I ./tensorflow/core/distributed_runtime/worker_interface.h:176] Initialized two variables...
+I ./tensorflow/core/distributed_runtime/worker_interface.h:178] Beginning of ???...
+I ./tensorflow/core/distributed_runtime/worker_interface.h:180] Call and wait started to run...
+I ./tensorflow/core/distributed_runtime/worker_interface.h:182] Call and wait procedure finished...waiting for notification
+I ./tensorflow/core/distributed_runtime/worker_interface.h:185] Got notification..
+I ./tensorflow/core/distributed_runtime/worker_interface.h:150] Finished call and wait
+I tensorflow/core/distributed_runtime/rdma/rdma_mgr.cc:75] status initialized
+I tensorflow/core/distributed_runtime/rdma/rdma_mgr.cc:77] s.ok()
+I tensorflow/core/distributed_runtime/rdma/rdma_mgr.cc:39] 4
+I tensorflow/core/distributed_runtime/rdma/rdma_mgr.cc:42] checkpoint 1
+I tensorflow/core/distributed_runtime/rdma/rdma_mgr.cc:44] logs for checkpoint 2
+I tensorflow/core/distributed_runtime/rdma/rdma_mgr.cc:53] Before setting channels 
+I tensorflow/core/distributed_runtime/rdma/rdma_mgr.cc:62] channel info set finished
+I tensorflow/core/distributed_runtime/rdma/rdma_mgr.cc:65] Current i value in rdma_mgr.cc is: 0
+I tensorflow/core/distributed_runtime/rdma/rdma_mgr.cc:65] Current i value in rdma_mgr.cc is: 1
+I tensorflow/core/distributed_runtime/rdma/rdma_mgr.cc:65] Current i value in rdma_mgr.cc is: 2
+I tensorflow/core/distributed_runtime/rdma/rdma_mgr.cc:65] Current i value in rdma_mgr.cc is: 3
+I ./tensorflow/core/distributed_runtime/worker_interface.h:148] worker interface got the getRemoteAddress command 
+I ./tensorflow/core/distributed_runtime/worker_interface.h:173] Beginning of CallandWait...
+I ./tensorflow/core/distributed_runtime/worker_interface.h:176] Initialized two variables...
+I ./tensorflow/core/distributed_runtime/worker_interface.h:178] Beginning of ???...
+I ./tensorflow/core/distributed_runtime/worker_interface.h:180] Call and wait started to run...
+I ./tensorflow/core/distributed_runtime/worker_interface.h:182] Call and wait procedure finished...waiting for notification
+I ./tensorflow/core/distributed_runtime/worker_interface.h:185] Got notification..
+I ./tensorflow/core/distributed_runtime/worker_interface.h:150] Finished call and wait
+I tensorflow/core/distributed_runtime/rdma/rdma_mgr.cc:75] status initialized
+I tensorflow/core/distributed_runtime/rdma/rdma_mgr.cc:77] s.ok()
+I ./tensorflow/core/distributed_runtime/worker_interface.h:148] worker interface got the getRemoteAddress command 
+I ./tensorflow/core/distributed_runtime/worker_interface.h:173] Beginning of CallandWait...
+I ./tensorflow/core/distributed_runtime/worker_interface.h:176] Initialized two variables...
+I tensorflow/core/distributed_runtime/rdma/rdma.cc:515] channel already connected
+I ./tensorflow/core/distributed_runtime/worker_interface.h:178] Beginning of ???...
+I ./tensorflow/core/distributed_runtime/worker_interface.h:180] Call and wait started to run...
+I ./tensorflow/core/distributed_runtime/worker_interface.h:182] Call and wait procedure finished...waiting for notification
+I ./tensorflow/core/distributed_runtime/worker_interface.h:185] Got notification..
+I ./tensorflow/core/distributed_runtime/worker_interface.h:150] Finished call and wait
+I ./tensorflow/core/distributed_runtime/worker_interface.h:173] Beginning of CallandWait...
+I ./tensorflow/core/distributed_runtime/worker_interface.h:176] Initialized two variables...
+I ./tensorflow/core/distributed_runtime/worker_interface.h:178] Beginning of ???...
+I ./tensorflow/core/distributed_runtime/worker_interface.h:180] Call and wait started to run...
+I ./tensorflow/core/distributed_runtime/worker_interface.h:182] Call and wait procedure finished...waiting for notification
+I ./tensorflow/core/distributed_runtime/worker_interface.h:185] Got notification..
+WARNING:tensorflow:From /home/jiacheng/tf_cpu/my/autoencoder/autoencoder_models/Autoencoder.py:28: initialize_all_variables (from tensorflow.python.ops.variables) is deprecated and will be removed after 2017-03-02.
+Instructions for updating:
+Use `tf.global_variables_initializer` instead.
+I tensorflow/core/distributed_runtime/master_session.cc:1012] Start master session a60b7ca05189902e with config: 
+
+INFO:tensorflow:Waiting for model to be ready.  Ready_for_local_init_op:  None, ready: Variables not initialized: Variable, Variable_1, Variable_2, Variable_3, beta1_power, beta2_power, Variable/Adam, Variable/Adam_1, Variable_1/Adam, Variable_1/Adam_1, Variable_2/Adam, Variable_2/Adam_1, Variable_3/Adam, Variable_3/Adam_1
+I ./tensorflow/core/distributed_runtime/worker_interface.h:173] Beginning of CallandWait...
+I ./tensorflow/core/distributed_runtime/worker_interface.h:176] Initialized two variables...
+I ./tensorflow/core/distributed_runtime/worker_interface.h:178] Beginning of ???...
+I ./tensorflow/core/distributed_runtime/worker_interface.h:180] Call and wait started to run...
+I ./tensorflow/core/distributed_runtime/worker_interface.h:182] Call and wait procedure finished...waiting for notification
+I ./tensorflow/core/distributed_runtime/worker_interface.h:185] Got notification..
+I ./tensorflow/core/distributed_runtime/worker_interface.h:148] worker interface got the getRemoteAddress command 
+I ./tensorflow/core/distributed_runtime/worker_interface.h:173] Beginning of CallandWait...
+I ./tensorflow/core/distributed_runtime/worker_interface.h:176] Initialized two variables...
+I tensorflow/core/distributed_runtime/rdma/rdma.cc:515] channel already connected
+I ./tensorflow/core/distributed_runtime/worker_interface.h:178] Beginning of ???...
+I ./tensorflow/core/distributed_runtime/worker_interface.h:180] Call and wait started to run...
+I ./tensorflow/core/distributed_runtime/worker_interface.h:182] Call and wait procedure finished...waiting for notification
+I ./tensorflow/core/distributed_runtime/worker_interface.h:185] Got notification..
+I ./tensorflow/core/distributed_runtime/worker_interface.h:150] Finished call and wait
+I ./tensorflow/core/distributed_runtime/worker_interface.h:148] worker interface got the getRemoteAddress command 
+I ./tensorflow/core/distributed_runtime/worker_interface.h:173] Beginning of CallandWait...
+I ./tensorflow/core/distributed_runtime/worker_interface.h:176] Initialized two variables...
+I tensorflow/core/distributed_runtime/rdma/rdma.cc:515] channel already connected
+I ./tensorflow/core/distributed_runtime/worker_interface.h:178] Beginning of ???...
+I ./tensorflow/core/distributed_runtime/worker_interface.h:180] Call and wait started to run...
+I ./tensorflow/core/distributed_runtime/worker_interface.h:182] Call and wait procedure finished...waiting for notification
+I ./tensorflow/core/distributed_runtime/worker_interface.h:185] Got notification..
+I ./tensorflow/core/distributed_runtime/worker_interface.h:150] Finished call and wait
+I ./tensorflow/core/distributed_runtime/worker_interface.h:173] Beginning of CallandWait...
+I ./tensorflow/core/distributed_runtime/worker_interface.h:176] Initialized two variables...
+I ./tensorflow/core/distributed_runtime/worker_interface.h:178] Beginning of ???...
+I ./tensorflow/core/distributed_runtime/worker_interface.h:180] Call and wait started to run...
+I ./tensorflow/core/distributed_runtime/worker_interface.h:182] Call and wait procedure finished...waiting for notification
+I ./tensorflow/core/distributed_runtime/worker_interface.h:185] Got notification..
+I ./tensorflow/core/distributed_runtime/worker_interface.h:173] Beginning of CallandWait...
+I ./tensorflow/core/distributed_runtime/worker_interface.h:176] Initialized two variables...
+I ./tensorflow/core/distributed_runtime/worker_interface.h:178] Beginning of ???...
+I ./tensorflow/core/distributed_runtime/worker_interface.h:180] Call and wait started to run...
+I ./tensorflow/core/distributed_runtime/worker_interface.h:182] Call and wait procedure finished...waiting for notification
+I ./tensorflow/core/distributed_runtime/worker_interface.h:185] Got notification..
+I tensorflow/core/distributed_runtime/master_session.cc:1012] Start master session 4fd12505295ba562 with config: 
+
+I ./tensorflow/core/distributed_runtime/worker_interface.h:173] Beginning of CallandWait...
+I ./tensorflow/core/distributed_runtime/worker_interface.h:176] Initialized two variables...
+I ./tensorflow/core/distributed_runtime/worker_interface.h:178] Beginning of ???...
+I ./tensorflow/core/distributed_runtime/worker_interface.h:180] Call and wait started to run...
+I ./tensorflow/core/distributed_runtime/worker_interface.h:182] Call and wait procedure finished...waiting for notification
+I ./tensorflow/core/distributed_runtime/worker_interface.h:185] Got notification..
+F tensorflow/core/distributed_runtime/rdma/rdma.cc:681] Check failed: status.ok() RecvLocalAsync was not ok, key/job:worker/replica:0/task:2/gpu:0;11464a0045cf4ef8;/job:ps/replica:0/task:0/gpu:0;edge_173_gradients/Add_grad/tuple/control_dependency_1;0:0;128312372944985188 error message: Step 128312372944985188
+Extracting MNIST_data/train-images-idx3-ubyte.gz
+Extracting MNIST_data/train-labels-idx1-ubyte.gz
+Extracting MNIST_data/t10k-images-idx3-ubyte.gz
+Extracting MNIST_data/t10k-labels-idx1-ubyte.gz
+Epoch: 0001 cost= 16872.155514773
+Epoch: 0002 cost= 61244.623612500
+Epoch: 0003 cost= 120003.075426137
+Epoch: 0004 cost= 37280.763171591
+Epoch: 0005 cost= 79980.139576136
+Epoch: 0006 cost= 52471.426578409
+Epoch: 0007 cost= 89058.778660227
+Epoch: 0008 cost= 117351.135650000
+Epoch: 0009 cost= 19082.811156818
+Epoch: 0010 cost= 16633.808798864

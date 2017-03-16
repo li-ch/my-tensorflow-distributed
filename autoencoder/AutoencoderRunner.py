@@ -1,15 +1,36 @@
 import numpy as np
-
+import os
+os.environ['TF_CPP_MIN_VLOG_LEVEL']='0'
+import time
 import sklearn.preprocessing as prep
 import tensorflow as tf
 from tensorflow.examples.tutorials.mnist import input_data
 
+tf.logging.set_verbosity(tf.logging.DEBUG)
+
 # from autoencoder.autoencoder_models.Autoencoder import Autoencoder
 from autoencoder_models.Autoencoder import Autoencoder
+'''
+parameter_servers = ["192.168.2.202:12223",
+                     "192.168.2.203:12223"]
+workers = ["192.168.2.202:12222",
+           "192.168.2.203:12222"]
+'''
 
-parameter_servers = ["192.168.122.101:2223"]
-workers = ["192.168.122.101:2222",
-           "192.168.122.102:2222"]
+
+parameter_servers = ["10.40.199.203:12224"]
+workers = ["10.40.199.202:12200",
+           "10.40.199.202:12201",
+           "10.40.199.202:12202",
+           "10.40.199.202:12203"]
+'''
+parameter_servers = ["10.40.199.203:12201"]
+#                     "10.40.199.202:12201"]
+
+workers = ["10.40.199.202:12222"]
+#           "10.40.199.200:12222"]
+'''
+
 cluster = tf.train.ClusterSpec({"ps": parameter_servers, "worker": workers})
 
 # input flags
@@ -18,8 +39,7 @@ tf.app.flags.DEFINE_integer("task_index", 0, "Index of task within the job")
 FLAGS = tf.app.flags.FLAGS
 
 # start a server for a specific task
-server = tf.train.Server(cluster, job_name=FLAGS.job_name, task_index=FLAGS.task_index)
-
+server = tf.train.Server(cluster, job_name=FLAGS.job_name, task_index=FLAGS.task_index,  protocol='grpc_rdma')
 
 mnist = input_data.read_data_sets('MNIST_data', one_hot=True)
 
@@ -38,7 +58,7 @@ def get_random_block_from_data(data, batch_size):
 X_train, X_test = standard_scale(mnist.train.images, mnist.test.images)
 
 n_samples = int(mnist.train.num_examples)
-training_epochs = 20
+training_epochs = 200
 batch_size = 128
 display_step = 1
 
@@ -57,7 +77,12 @@ elif FLAGS.job_name == "worker":
     sv = tf.train.Supervisor(is_chief=(FLAGS.task_index == 0),
                              init_op=autoencoder.init_op)
 
+    
+
+    
     with sv.prepare_or_wait_for_session(server.target) as sess:
+        f = open("RDMA_" + str(len(workers)) + 'w_' + str(FLAGS.task_index),'w')
+        begin_time = time.time()
         for epoch in range(training_epochs):
             avg_cost = 0.
             total_batch = int(n_samples / batch_size)
@@ -72,7 +97,9 @@ elif FLAGS.job_name == "worker":
 
                 # Display logs per epoch step
             if epoch % display_step == 0:
+                f.write(str(time.time()-begin_time)+",")
                 print "Epoch:", '%04d' % (epoch + 1), \
                     "cost=", "{:.9f}".format(avg_cost)
 
         print "Total cost: " + str(autoencoder.calc_total_cost(X_test, sess))
+        f.close()
