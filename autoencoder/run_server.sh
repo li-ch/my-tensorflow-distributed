@@ -5,8 +5,7 @@ dir=./log/
 echo "Running..."
 
 date > $dir/output-ps
-export CUDA_VISIBLE_DEVICES=0
-python AutoencoderRunner.py --job_name="ps" --task_index=0 >> $dir/output-ps0 2>&1 &
+CUDA_VISIBLE_DEVICES=0 python AutoencoderRunner.py --job_name="ps" --task_index=0 >> $dir/output-ps0 2>&1 &
 sleep 10
 #python AutoencoderRunner.py --job_name="ps" --task_index=2 >> $dir/output-ps2 2>&1 &
 #sleep 10
